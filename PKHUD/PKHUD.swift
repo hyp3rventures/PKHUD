@@ -16,7 +16,7 @@ open class PKHUD: NSObject {
         static let sharedHUD = PKHUD()
     }
 
-    public var viewToPresentOn: UIView? = nil
+    public var viewToPresentOn: UIView?
 
     fileprivate let container = ContainerView()
     fileprivate var hideTimer: Timer?
@@ -97,9 +97,28 @@ open class PKHUD: NSObject {
             return container.frameView.content
         }
         set {
+            container.isToast = newValue is PKHUDToastView
             container.frameView.content = newValue
+            configureContentMode()
             startAnimatingContentView()
         }
+    }
+
+    open var darkMode: Bool = false {
+        didSet {
+            configureContentMode()
+        }
+    }
+
+    open var preferredFont: UIFont? {
+        didSet {
+            configureContentMode()
+        }
+    }
+
+    open var preferredCornerRadius: CGFloat {
+        set { container.frameView.layer.cornerRadius = newValue }
+        get { return container.frameView.layer.cornerRadius }
     }
 
     open var effect: UIVisualEffect? {
@@ -108,6 +127,18 @@ open class PKHUD: NSObject {
         }
         set {
             container.frameView.effect = newValue
+        }
+    }
+
+    open func configureContentMode() {
+        self.contentView.backgroundColor = (darkMode ? UIColor.darkGray : UIColor.white).withAlphaComponent(0.85)
+        self.contentView.subviews.forEach { (view) in
+            if let label = view as? UILabel {
+                label.textColor = (darkMode ? UIColor.white : UIColor.black).withAlphaComponent(0.85)
+                if let preferredFont = self.preferredFont {
+                    label.font = preferredFont.withSize(label.font.pointSize)
+                }
+            }
         }
     }
 

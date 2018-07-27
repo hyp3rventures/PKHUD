@@ -19,6 +19,8 @@ internal class ContainerView: UIView {
         commonInit()
     }
 
+    internal var isToast: Bool = false
+
     required init?(coder aDecoder: NSCoder) {
         frameView = FrameView()
         super.init(coder: aDecoder)
@@ -36,13 +38,14 @@ internal class ContainerView: UIView {
     internal override func layoutSubviews() {
         super.layoutSubviews()
 
-        frameView.center = center
+        frameView.center = isToast ? CGPoint(x: center.x, y: bounds.height - (frameView.content.bounds.height / 2) - 25) : center
         backgroundView.frame = bounds
     }
 
     internal func showFrameView() {
         layer.removeAllAnimations()
-        frameView.center = center
+
+        frameView.center = isToast ? CGPoint(x: center.x, y: bounds.height - (frameView.content.bounds.height / 2) - 25) : center
         frameView.alpha = 1.0
         isHidden = false
     }
