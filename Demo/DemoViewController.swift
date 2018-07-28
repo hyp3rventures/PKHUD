@@ -51,6 +51,9 @@ class DemoViewController: UIViewController {
         }
     }
 
+    @IBAction func showToastHUD(_ sender: AnyObject) {
+        HUD.flash(.toast(title: "Saved data"), delay: 2.0)
+    }
     /*
     
     Please note that the above demonstrates the "porcelain" interface - a more concise and clean way to work with the HUD.

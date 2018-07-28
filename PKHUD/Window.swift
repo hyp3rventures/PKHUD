@@ -12,6 +12,10 @@ import UIKit
 /// The window used to display the PKHUD within. Placed atop the applications main window.
 internal class ContainerView: UIView {
 
+    internal var isToast: Bool {
+        return self.frameView.content is PKHUDToastView
+    }
+
     internal let frameView: FrameView
     internal init(frameView: FrameView = FrameView()) {
         self.frameView = frameView
@@ -36,13 +40,13 @@ internal class ContainerView: UIView {
     internal override func layoutSubviews() {
         super.layoutSubviews()
 
-        frameView.center = center
+        frameView.center = isToast ? CGPoint(x: center.x, y: bounds.height - (frameView.content.bounds.height / 2) - 25) : center
         backgroundView.frame = bounds
     }
 
     internal func showFrameView() {
         layer.removeAllAnimations()
-        frameView.center = center
+        frameView.center = isToast ? CGPoint(x: center.x, y: bounds.height - (frameView.content.bounds.height / 2) - 25) : center
         frameView.alpha = 1.0
         isHidden = false
     }

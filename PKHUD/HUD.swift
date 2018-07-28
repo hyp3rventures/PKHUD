@@ -22,6 +22,8 @@ public enum HUDContentType {
     case labeledImage(image: UIImage?, title: String?, subtitle: String?)
     case labeledRotatingImage(image: UIImage?, title: String?, subtitle: String?)
 
+    case toast(title: String?)
+
     case label(String?)
     case systemActivity
 }
@@ -94,6 +96,9 @@ public final class HUD {
             return PKHUDSquareBaseView(image: image, title: title, subtitle: subtitle)
         case let .labeledRotatingImage(image, title, subtitle):
             return PKHUDRotatingImageView(image: image, title: title, subtitle: subtitle)
+
+        case let .toast(title):
+            return PKHUDToastView(text: title)
 
         case let .label(text):
             return PKHUDTextView(text: text)
