@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="D2U-NN-2aL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="D2U-NN-2aL">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -27,26 +28,11 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rqP-5y-Qfl">
                                 <rect key="frame" x="36" y="291" width="303" height="356"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDX-YT-2be">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5aP-EE-VfI">
                                         <rect key="frame" x="0.0" y="0.0" width="303" height="44"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.66000000000000003" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="e4i-A7-lgx"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="Show/Hide Keyboard">
-                                            <color key="titleColor" red="0.25" green="0.25" blue="0.25" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="showHideKeyboard:" destination="D2U-NN-2aL" eventType="touchUpInside" id="dkr-Ml-4IT"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nZ4-Lx-cqz">
-                                        <rect key="frame" x="0.0" y="52" width="303" height="44"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.66000000000000003" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="yyh-ba-2Q5"/>
+                                            <constraint firstAttribute="height" constant="44" id="jZx-F6-Sbr"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Animated Success HUD">
@@ -54,11 +40,11 @@
                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="showAnimatedSuccessHUD:" destination="D2U-NN-2aL" eventType="touchUpInside" id="k9E-hd-08Z"/>
+                                            <action selector="showAnimatedSuccessHUD:" destination="D2U-NN-2aL" eventType="touchUpInside" id="gAf-i3-WMO"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x5z-e1-I63">
-                                        <rect key="frame" x="0.0" y="104" width="303" height="44"/>
+                                        <rect key="frame" x="0.0" y="52" width="303" height="44"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.66000000000000003" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="O2F-o7-Xsw"/>
@@ -73,7 +59,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rmq-Eh-KX3">
-                                        <rect key="frame" x="0.0" y="156" width="303" height="44"/>
+                                        <rect key="frame" x="0.0" y="104" width="303" height="44"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.66000000000000003" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="RY7-k4-4pQ"/>
@@ -88,7 +74,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X4n-2l-pZk">
-                                        <rect key="frame" x="0.0" y="208" width="303" height="44"/>
+                                        <rect key="frame" x="0.0" y="156" width="303" height="44"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.66000000000000003" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="kcT-Ut-AmL"/>
@@ -103,7 +89,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NfX-TV-8Iq">
-                                        <rect key="frame" x="0.0" y="260" width="303" height="44"/>
+                                        <rect key="frame" x="0.0" y="208" width="303" height="44"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.66000000000000003" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="hbA-LY-ItN"/>
@@ -118,7 +104,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1XL-mO-npD">
-                                        <rect key="frame" x="0.0" y="312" width="303" height="44"/>
+                                        <rect key="frame" x="0.0" y="260" width="303" height="44"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.66000000000000003" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="uLS-Fh-Fh5"/>
@@ -130,6 +116,21 @@
                                         </state>
                                         <connections>
                                             <action selector="showTextHUD:" destination="D2U-NN-2aL" eventType="touchUpInside" id="eJg-na-gUk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nZ4-Lx-cqz">
+                                        <rect key="frame" x="0.0" y="312" width="303" height="44"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.66000000000000003" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="yyh-ba-2Q5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Toast HUD">
+                                            <color key="titleColor" red="0.25" green="0.25" blue="0.25" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showToastHUD:" destination="D2U-NN-2aL" eventType="touchUpInside" id="lPV-ku-KSc"/>
                                         </connections>
                                     </button>
                                 </subviews>

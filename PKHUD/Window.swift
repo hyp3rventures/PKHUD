@@ -12,6 +12,10 @@ import UIKit
 /// The window used to display the PKHUD within. Placed atop the applications main window.
 internal class ContainerView: UIView {
 
+    internal var isToast: Bool {
+        return self.frameView.content is PKHUDToastView
+    }
+
     private var keyboardIsVisible = false
     private var keyboardHeight: CGFloat = 0.0
     
@@ -38,13 +42,10 @@ internal class ContainerView: UIView {
 
     internal override func layoutSubviews() {
         super.layoutSubviews()
-
         frameView.center = calculateHudCenter()
         backgroundView.frame = bounds
     }
     
-    
-
     internal func showFrameView() {
         layer.removeAllAnimations()
         frameView.center = calculateHudCenter()
@@ -163,7 +164,7 @@ internal class ContainerView: UIView {
     
     private func calculateHudCenter() -> CGPoint {
         if !keyboardIsVisible {
-            return center
+            return isToast ? CGPoint(x: center.x, y: bounds.height - (frameView.content.bounds.height / 2) - 25) : center
         } else {
             let yLocation = (frame.height - keyboardHeight) / 2
             return CGPoint(x: center.x, y: yLocation)
